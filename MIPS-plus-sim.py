@@ -195,24 +195,24 @@ def main():
             r2 = twos_complement(r2)
             r3 = lineParse[2]
             if r2 < r3:
-                regArray[regs.index(lineParse[0])] = 1
+                regArray[regs.index(lineParse[0])] = hex(1)
                 f.write('Comparing ' + str(r2) + " with " + str(r3) + ": 1 has been written into " + lineParse[0] + "\n")
             else:
-                regArray[regs.index(lineParse[0])] = 0
+                regArray[regs.index(lineParse[0])] = hex(0)
                 f.write('Comparing ' + str(r2) + " with " + str(r3) + ": 0 has been written into " + lineParse[0] + "\n")
 
         elif (lineParse[0:4] == "sltu"):  # mult
-            lineParse = lineParse.replace("lb", "")
+            lineParse = lineParse.replace("sltu", "")
             lineParse = lineParse.split(",")
             r2 = regArray[regs.index(lineParse[1])]
             r3 = regArray[regs.index(lineParse[2])]
             r2 = hexToDec(r2)
             r3 = hexToDec(r3)
             if r2 < r3:
-                regArray[regs.index(lineParse[0])] = 1
+                regArray[regs.index(lineParse[0])] = hex(1)
                 f.write('Comparing ' + str(r2) + " with " + str(r3) + ": 1 has been written into " + lineParse[0] + "\n")
             else:
-                regArray[regs.index(lineParse[0])] = 0
+                regArray[regs.index(lineParse[0])] = hex(0)
                 f.write('Comparing ' + str(r2) + " with " + str(r3) + ": 0 has been written into " + lineParse[0] + "\n")
 
 
