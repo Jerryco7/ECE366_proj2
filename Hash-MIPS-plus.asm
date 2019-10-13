@@ -10,10 +10,7 @@ addi $19, $0, 100
 big_loop:
 add $9, $0, $18
 loop:
-multu $8, $9
-mfhi $10
-mflo $11
-xor $9, $10, $11
+hash $9, $8, $9
 addi $14, $14, -1
 bne $14, $0, loop
 addi $14, $0, 5
